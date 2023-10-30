@@ -2,40 +2,40 @@
 
 using namespace std;
 
-int main() {
-	// 결과 배열 초기화
-	int resultArray[9][10] = {
-		{0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-		{0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-		{0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-		{0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-		{0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-		{0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-		{0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-		{0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-		{0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
-	};
+void DrawMap(char Text1, char Text2);
 
-	// 배열 변환
-	for (int i = 0; i < 9; i++) {
-		for (int j = 0; j < 10; j++) {
-			if ((i % 4 == 0) || (j % 4 == 0)) {
-				resultArray[i][j] = 0;
+int main()
+{
+
+	DrawMap('1', '0'); //이곳에서 숫자만 바꾸면 됩니다.
+	
+
+}
+
+void DrawMap(char Text1, char Text2)
+{
+	char in_Text1; //선언 in_text 값 출력
+	char in_Text2;
+
+	in_Text1 = Text1; 
+	in_Text2 = Text2;
+
+
+	for (int Y = 0; Y < 10; Y++)
+	{
+		for (int X = 0; X < 10; X++)
+		{
+			if (X == 0 || Y == 0 || X == 9 || Y == 9 || X == 4 || Y == 4)
+			{
+				cout << in_Text1;
 			}
 			else
 			{
-				resultArray[i][j] = 1;
+				cout << in_Text2;
 			}
-		}
-	}
 
-	// 결과 출력
-	for (int i = 0; i < 9; i++) {
-		for (int j = 0; j < 10; j++) {
-			cout << resultArray[i][j];
 		}
 		cout << endl;
-	}
 
-	return 0;
+	}
 }
